@@ -1,0 +1,51 @@
+ <div class="row">
+        <div class="large-6 large-centered columns">
+            <h3 id="IMDBrank">IMDB TOP 250 MOIVE DIRECTORY</h3>
+    </div>
+    </div>
+    <div id = "buttons" class="row">
+     
+            <div class="large-6 large-centered columns">
+                <div class="small-5 columns"><a ng-href="#/movies">Search</a></div>
+                <div class="small-5 columns"><a ng-click="movetogallery()">Gallery</a></div>
+            </div>
+      
+
+    </div>
+
+    <div class="row">
+       <div class="large-9 large-centered columns">
+           <div class="row">
+                <div class="button-group even-12">
+                   <a href="#/movies/gallery/all" class="button">All</a>
+                   <a href="#/movies/gallery/Action" class="button">Action</a>
+                   <a href="#/movies/gallery/Adventure" class="button">Adventure</a>
+                   <a href="#/movies/gallery/Crime" class="button">Crime</a>
+                   <a href="#/movies/gallery/Comedy" class="button">Comedy</a>
+                   <a href="#/movies/gallery/Drama" class="button">Drama</a>
+                   <a href="#/movies/gallery/Musical" class="button">Musical</a>
+                   <a href="#/movies/gallery/Mystery" class="button">Mystery</a>
+                   <a href="#/movies/gallery/Romance" class="button">Romance</a>
+                   <a href="#/movies/gallery/Sci-Fi" class="button">Sci-Fi</a>
+                   <a href="#/movies/gallery/Thriller" class="button">Thriller</a>
+                   <a href="#/movies/gallery/Western" class="button">Western</a>
+               </div>
+           </div>
+              
+           
+       </div> 
+
+    </div>
+
+    <div class="row">
+        <div class="large-10 large-centered columns">
+           
+                <div ng-repeat="movie in movies" id = "gallery_box" class="large-2 columns end thumbnail">
+                    <a ng-href="#/movies/{{movie.rank}}" class="thumb"><img id = "poster" ng-src = "./data/images/{{movie.imdbID}}.jpg"></a>
+                </div>
+            
+          
+        </div>
+       
+
+    </div>

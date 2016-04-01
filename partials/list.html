@@ -1,0 +1,76 @@
+ <div class="row">
+        <div class="large-6 large-centered columns">
+            <h3 id="IMDBrank">IMDB TOP 250 MOIVE DIRECTORY</h3>
+    </div>
+    </div>
+    <div id = "buttons" class="row">
+     
+            <div class="large-6 large-centered columns">
+                <div class="small-5 columns"><a ng-href="#/movies">Search</a></div>
+                <div class="small-5 columns"><a ng-click="movetogallery()">Gallery</a></div>
+            </div>
+      
+
+    </div>
+     <div id = "input_field"  class="row">
+         
+         <div id = "input_box" class="large-6 large-centered columns">
+             <div class="row">
+                <div class="small-6 small-centered columns">
+                      <label>Search by
+                    <input name = "search_input" type="text" ng-model = "query" ng-minlength="1">
+                    </label>
+                </div>
+               
+             </div>
+             <div class="row">
+                    <div class="small-6 small-centered columns">
+                 <label>Sort By
+                    <select ng-model="orderProp">
+                        <option value="rank">Rank</option>
+                        <option value="title">Title</option>
+                      </select>
+                 </label>
+                  </div>
+             </div>
+             <div class="row">
+                  <div class="small-6 small-centered columns">
+                    <fieldset> 
+                        <input type="radio" ng-model="reverse" ng-value="false" name="sortorder" id="ascd" ng-checked="true" ><label>ascending</label>
+                    <input type="radio" ng-model="reverse" ng-value="true" name="sortorder" id="desd"><label>descending</label>
+                        
+                    </fieldset>
+                   
+                    </div>
+             </div>
+
+
+         </div>
+     </div>
+     <div ng-show="query" class="movie-container">
+     	<ul>
+	     	<li class="row" ng-repeat="movie in movies | filter:query | orderBy:orderProp:reverse" class="thumbnail">
+
+				<div data= "{{movie.rank}}" id = "movie-box" ng-click="movetodetails(movie.rank)" class="large-6 large-centered columns">
+
+					<div class="row">
+						<div class="large-4 columns">
+							<a href="#/movies/{{movie.rank}}" class="thumb"><img id = "poster" ng-src = "./data/images/{{movie.imdbID}}.jpg"></a>
+						</div>
+						<div class="large-8 columns">
+							<div id= "title" class="row">
+								  {{movie.title}}
+							
+							</div>
+							<div id = "rank" class="row">
+									Rank: {{movie.rank}}
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</li>
+		</ul>
+     </div>
+
+    

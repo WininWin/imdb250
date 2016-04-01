@@ -1,0 +1,56 @@
+ <div class="row">
+        <div class="large-6 large-centered columns">
+            <h3 id="IMDBrank">IMDB TOP 250 MOIVE DIRECTORY</h3>
+    </div>
+    </div>
+    <div id = "buttons" class="row">
+     
+            <div class="large-6 large-centered columns">
+                <div class="small-5 columns"><a ng-href="#/movies">Search</a></div>
+                <div class="small-5 columns"><a ng-click="movetogallery()">Gallery</a></div>
+            </div>
+      
+
+    </div>
+
+    <div class="row">
+    	<div id= "detail-container" class="large-6 large-centered columns">
+	    	
+	    		<div class="row">
+	    			<div class="small-6 columns"><button data= "{{movie.rank}}" ng-click = "move_prev(movie.rank)"><i class="fa fa-arrow-left"></i></button></div>
+	    			<div class="small-6 columns end"><button id = "right" data= "{{movie.rank}}" ng-click = "move_next(movie.rank)"><i class="fa fa-arrow-right"></i></button></div>
+	    		
+	    		</div>
+	    		<div class="row">
+	    			<div id ="title"> {{movie.title}}</div>
+	    			<div id = "rank">Rank: {{movie.rank}}</div>
+	    		</div>
+	    		<div class="row">
+	    			<div class="small-6 columns"><img id = "poster" ng-src = "./data/images/{{movie.imdbID}}.jpg"></div>
+	    			<div id = "summary" class="small-6 columns"> 
+	    				
+	    				<div id = "plot" class="row">
+	    					{{movie.plot}}
+	    				</div>
+	    				<div class="row">
+	    					Released : {{movie.released}}
+	    				</div>
+	    				<div class="row">
+	    					Runtime : {{movie.runtime}}
+	    				</div>
+	    				<div class="row">
+	    					Metascore : {{movie.metascore}}
+	    				</div>
+	    				<div class="row">
+	    					Rating : {{movie.imdbRating}}
+	    				</div>
+	    				<div class="row">
+	    					Awards : {{movie.awards}}
+	    				</div>
+
+
+	    			</div>
+	    		</div>
+	    	</div>
+		
+    </div>
